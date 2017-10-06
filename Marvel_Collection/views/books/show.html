@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+  <title>COMIC BOOKS</title>
+<!--   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+ -->  <link rel='stylesheet' type='text/css' href='./public/css/style.css'>
+  <script src="./public/js/jquery.js"></script>
+  <script src="./public/js/books.js"></script>
+</head>
+<body>
+ 
+   {{#books}}
+  <div>
+    <div><img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt=""></div>
+    <div>{{title}}</div>
+    <div>{{description}}</div>
+    <div>{{prices}}</div>
+  </div>
+  {{/books}}
+
+<button>Favorite</button>
+<button><a href="/books/Search">Back</a></button>
+
+  <!-- logout to index.html (landing page) -->
+  <a href="/" class="logout">Logout</a> 
+</body>
+</html>

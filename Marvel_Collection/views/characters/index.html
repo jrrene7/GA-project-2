@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>Search for a character</h1>	
+
+
+   <form action="/characters/show" method="POST">
+          <input placeholder="Enter Name" name="input" type="text"/>
+                    <input type="submit" value="Search">
+   </form>
+
+   <!-- {{#characters}}
+	<div>
+		<div name="image"><img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt=""></div>
+		<div>{{id}}</div>
+		<div>{{name}}</div>
+		<div>{{description}}</div>
+ -</div>
+	{{/characters}}
+
+	<button>Favorite</button> -->
+<button><a href="/home">Back</a></button>
+
+	<!-- logout to index.html (landing page) -->
+	<a href="/" class="logout">Logout</a> 
+
+
+</body>
+</html>
