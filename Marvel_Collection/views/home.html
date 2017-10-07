@@ -7,13 +7,39 @@
 <body>
 
 
-	
+	<div id="character-container">
 	<div class="characters">
-		<a href="/characters/search">CHARACTERS</a>
+		<a href="/characters/search">SEARCH FOR A CHARACTERS</a>
 	</div>
+	<div>
+		{{#characters}}
+		<img src="{{thumbnail}}" alt="">
+		<br/ >
+		{{name}}
+		<br/ >
+		{{description}}
 
-	<div class="books">
-		<a href="/books/search">COMIC BOOKS</a>
+		{{/characters}}
 	</div>
+</div>
+
+<div id="book-container">
+	<div class="books">
+		<a href="/books/search">SEARCH FOR A COMIC BOOKS</a>
+	</div>
+	<div>
+				{{#books}}
+		<img src="{{thumbnail}}" alt="">
+		<br/ >
+		{{title}}
+		<br/ >
+		{{description}}
+
+		{{/books}}
+		
+	</div>
+</div>
+	<button><a href="/" class="logout">Logout</a></button> 
+
 </body>
 </html>

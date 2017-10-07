@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
@@ -41,6 +41,11 @@ const auth = require('./services/auth.js');
 app.use(auth.passportInstance);
 app.use(auth.passportSession);
 app.use(cookieParser());
+
+app.use((request, response, next) => {
+	response.locals.user = request.user || null;
+	next();
+})
 
 
 app.get('/', (req, res) => {

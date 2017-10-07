@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS user_books;
 DROP TABLE IF EXISTS user_characters;
 
+\c marvel_companion;
 
 CREATE TABLE users (
   id BIGSERIAL PRIMARY KEY,
@@ -20,7 +21,8 @@ CREATE TABLE characters (
   id SERIAL PRIMARY KEY,
   name VARCHAR,
   description VARCHAR,
-  thumbnail VARCHAR
+  thumbnail VARCHAR,
+  user_id INTEGER
 );
 
 

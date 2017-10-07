@@ -14,6 +14,13 @@
 
     {{#characters}}
   <div>
+      <form action="/characters/home" method="POST">
+        <input type="hidden" value="{{thumbnail.path}}.{{thumbnail.extension}}" name="thumbnail">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="hidden" value="{{name}}" name="name">
+        <input type="hidden" value="{{description}}" name="description">
+
+
     <div name="image"><img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt=""></div>
     <div>{{id}}</div>
     <div>{{name}}</div>
@@ -21,7 +28,10 @@
  -</div>
   {{/characters}}
 
-  <button>Favorite</button>
+<!--         <input placeholder="Enter Name" name="input" type="text">
+ --><!--        <input type="submit" value="Search">
+ -->  <button>Favorite</button>
+</form>
 <button><a href="/characters/Search">Back</a></button>
 
   <!-- logout to index.html (landing page) -->
