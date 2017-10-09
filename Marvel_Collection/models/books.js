@@ -51,25 +51,31 @@ Books.getFavorites = (user_id) => {
 	return db.any(`SELECT * FROM books WHERE user_id = $1`, user_id);
 }
 
-Books.updateFavorite = (req, res, next) => {
-  const {user_id, book_id} = res.locals.userBooks;
-  const {id} = req.params;
-  db.oneOrNone(`UPDATE user_books SET
-    user_id = $1, book_id = $2
-    WHERE id = $3 RETURNING *`,
-    [user_id, book_id, id])
-    .then(userBook => {
-      res.locals.userBook = userBook;
-      next();
-    })
-    .catch(err => console.log(err));
-};
+// Books.updateFavorite = (req, res, next) => {
+//   const {user_id, book_id} = res.locals.userBooks;
+//   const {id} = req.params;
+//   db.oneOrNone(`UPDATE user_books SET
+//     user_id = $1, book_id = $2
+//     WHERE id = $3 RETURNING *`,
+//     [user_id, book_id, id])
+//     .then(userBook => {
+//       res.locals.userBook = userBook;
+//       next();
+//     })
+//     .catch(err => console.log(err));
+// };
 
-Books.deleteFavorite = (req, res, next) => {
-  const {id} = req.params;
-  db.none('DELETE FROM user_books WHERE id = $1', [id])
+Books.deleteFavorite = (request, response, next) => {
+  const {user_id} = request.params;
+  db.none(`DELETE FROM books WHERE user_id = $1`, user_id)
   .then(()=> next())
   .catch(err => console.log(err));
 };
+
+
+
+
+
+
 
 module.exports = Books;

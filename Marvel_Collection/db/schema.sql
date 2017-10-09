@@ -31,7 +31,8 @@ CREATE TABLE books (
   title VARCHAR,
   thumbnail VARCHAR,
   description VARCHAR,
-	price INTEGER
+	price INTEGER,
+  user_id INTEGER
 );
 
 CREATE TABLE user_books (

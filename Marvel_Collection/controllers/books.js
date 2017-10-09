@@ -2,6 +2,10 @@ const router = require('express').Router();
 const auth = require('../services/auth');
 const Books = require('../models/books');
 
+const User = require('../models/user');
+const passport = require('passport');
+
+
 router.get('/search', 
 		//auth.restrict, 
 		//Characters.getCharacters, 
@@ -42,11 +46,11 @@ router.get('/home', (request, response) => {
 //     res.json({userBook});
 //   });
 
-// router.delete('/:id',
-//   Books.deleteFavorite,
-//   (req, res) => {
-//     res.send('deleted');
-//   });
+router.delete('/home',
+  Books.deleteFavorite,
+  (request, response) => {
+    response.send('deleted');
+  });
 
 
 module.exports = router;

@@ -39,23 +39,23 @@ Characters.getFavorites = (user_id) => {
 	return db.any(`SELECT * FROM characters WHERE user_id = $1`, user_id);
 }
 
-Characters.updateFavorite = (req, res, next) => {
-  const {user_id, character_id} = res.locals.userCharacter;
-  const {id} = req.params;
-  db.oneOrNone(`UPDATE user_characters SET
-    user_id = $1, character_id = $2
-    WHERE id = $3 RETURNING *`,
-    [user_id, character_id, id])
-    .then(userCharacter => {
-      res.locals.userCharacter = userCharacter;
-      next();
-    })
-    .catch(err => console.log(err));
-   };
+// Characters.updateFavorite = (req, res, next) => {
+//   const {user_id, character_id} = res.locals.userCharacter;
+//   const {id} = req.params;
+//   db.oneOrNone(`UPDATE user_characters SET
+//     user_id = $1, character_id = $2
+//     WHERE id = $3 RETURNING *`,
+//     [user_id, character_id, id])
+//     .then(userCharacter => {
+//       res.locals.userCharacter = userCharacter;
+//       next();
+//     })
+//     .catch(err => console.log(err));
+//    };
 
-Characters.deleteFavorite = (req, res, next) => {
-  const {id} = req.params;
-  db.none('DELETE FROM user_characters WHERE id = $1', [id])
+Characters.deleteFavorite = (request, response, next) => {
+  const {user_id} = request.params;
+  db.none(`DELETE FROM characters WHERE user_id = $1`, user_id)
   .then(()=> next())
   .catch(err => console.log(err));
 }

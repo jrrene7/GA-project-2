@@ -14,14 +14,25 @@
  
    {{#books}}
   <div>
-    <div><img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt=""></div>
+
+     <form action="/books/home" method="POST">
+        <input type="hidden" value="{{thumbnail.path}}.{{thumbnail.extension}}" name="thumbnail">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="hidden" value="{{title}}" name="name">
+        <input type="hidden" value="{{description}}" name="description">
+<div>
+<img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt="">
+</div>
     <div>{{title}}</div>
     <div>{{description}}</div>
     <div>{{prices}}</div>
+    <button>Favorite</button>
+</form>
   </div>
   {{/books}}
-
+<!-- 
 <button>Favorite</button>
+</form> -->
 <button><a href="/books/Search">Back</a></button>
 
   <!-- logout to index.html (landing page) -->

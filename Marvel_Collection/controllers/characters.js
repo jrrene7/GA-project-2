@@ -2,6 +2,10 @@ const router = require('express').Router();
 const auth = require('../services/auth');
 const Characters = require('../models/characters');
 
+const User = require('../models/user');
+const passport = require('passport');
+
+
 
 router.get('/search', 
 		//auth.restrict, 
@@ -36,11 +40,11 @@ router.get('/home', (request, response) => {
 })
 
 
-// router.delete('/:id',
-//   Characters.deletefavorite,
-//   (req, res) => {
-//     res.send('deleted');
-//   });
+router.delete('/home',
+  Characters.deleteFavorite,
+  (request, response) => {
+    response.send('deleted');
+  });
 
 
 module.exports = router;
