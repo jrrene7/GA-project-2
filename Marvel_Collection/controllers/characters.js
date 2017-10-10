@@ -39,12 +39,21 @@ router.get('/home', (request, response) => {
      	})
 })
 
-// router.put('/:id',
+// router.get('/home/edit',
+//   // Characters.updateFavorite,
+//   (request, response) => {
+//     console.log(Characters);
+//     const {userCharacter} = response.locals;
+//     response.render('characters/edit', {userCharacter});
+//   });
+
+// router.put('/:id', 
 //   Characters.updateFavorite,
 //   (request, response) => {
+//     console.log('======> HERE');
 //     const {userCharacter} = response.locals;
-//     response.json({userCharacter});
-//   });
+//     response.json({userCharacter})
+//   })
 
 router.delete('/:id',
   Characters.deleteFavorite,

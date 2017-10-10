@@ -13,20 +13,20 @@
 
 	<div id="characters-section">
 	<div class="characters">
-		<a href="/characters/search">SEARCH FOR A CHARACTERS</a>
+		<a href="/characters/search">SEARCH FOR A CHARACTER</a>
 		<br/ >
 		<button class="button-primary"><a href="/characters/home">Favorite Characters</a></button>
 	</div>
 	<div id="characters-list">
 		{{#characters}}
-		<img src="{{thumbnail}}" alt="">
+		<div id="character-thumbnail"><img src="{{thumbnail}}" alt=""></div>
 		<br/ >
-		{{name}}
+		<div id="character-name">{{name}}</div>
 		<br/ >
-		{{description}}
+		<div id="character-description">{{description}}</div>
 		<br/ >
 
-	<button id="edit-character" data-id={{id}} class="button-primary">EDIT</button>
+	<button id="edit-character" data-id={{id}} class="button-primary"><a href="home/edit">EDIT</a></button>
 		<button id="delete-character" data-id={{id}} class="button-primary">DELETE</button>
 	
 
@@ -40,7 +40,7 @@
 
 <div id="books-section">
 <div class="books">
-	<a href="/books/search">SEARCH FOR A COMIC BOOKS</a>
+	<a href="/books/search">SEARCH FOR COMIC BOOKS</a>
 	<br/ >
 	<button class="button-primary"><a href="/books/home">Favorite Books</a></button>
 	</div>
@@ -65,7 +65,8 @@
 	</div>
 </div>
 <br/ >
-	<button><a href="/" class="logout">Logout</a></button> 
+<br/ >
+	<button class="button-primary"><a href="/" class="logout">Logout</a></button> 
 
 </body>
 </html>

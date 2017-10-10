@@ -5,25 +5,24 @@
 	<title>EDIT</title>
 </head>
 <body>
-	
- {{#characters}}
+	<h1>EDIT</h1>
   <div class="characters">
-      <form action="/characters/edit" method="POST">
-        <input type="submit" value="{{thumbnail.path}}.{{thumbnail.extension}}" name="thumbnail">
-        <input type="submit" value="{{id}}" name="id">
-        <input type="submit" value="{{name}}" name="name">
-        <input type="submit" value="{{description}}" name="description">
+      <form action="/characters/home" method="POST">
+        <input type="hidden" value={{id}}>
 
+  <input placeholder="thumbnail" type="text" value="{{thumbnail.path}}{{thumbnail.extension}}" name="thumbnail" data-id={{id}}>
+  <br/ >
+        
+  <input placeholder="name" type="text" value="{{name}}" name="name" data-id={{id}}>
+  <br/ >
 
-    <div name="image"><img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt=""></div>
-    <div>{{id}}</div>
-    <div>{{name}}</div>
-    <div>{{description}}</div>
- -</div>
+  <input placeholder="description" type="text" value="{{description}}" name="description" data-id={{id}}>
+  <br/ >
+        <input type="submit" name="">
 
- -->  <button class="button-primary">EDIT</button>
+  </div>
+
 </form>
-  {{/characters}}
 
 </body>
 </html>

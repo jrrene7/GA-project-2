@@ -14,7 +14,7 @@ float: left;
 border: 
 width: 40vw;
 background-color: gray;
-opacity: .9;
+opacity: 1;
 
 }
 
@@ -33,7 +33,7 @@ img {
 	float: right;
 	width: 40vw;
 	background-color: gray;
-	opacity: .9;
+	opacity: 1;
 }
 
 #books-list {

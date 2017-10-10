@@ -53,6 +53,38 @@ const deleteCharacter = (id) => {
 
 
 
+
+// const editCharacter = (id) => {
+//   const name = $('')
+//   const name = $('#character-name').val();
+//   const description = $('#character-description').val();
+//   const thumbnail = $('#character-thumbnail').val();
+//   $.ajax({
+//     url: `/characters/home/edit/${id}`,
+//     type: 'PUT',
+//     data: {
+//       name: name,
+//       description: description,
+//       thumbnail: thumbnail
+//     },
+//     success: (data) => {
+//          window.location.reload();
+//         $(`#characters-list[data-id]=${id}`);
+//      },
+//                 error: (err) => {
+//                 console.log(err);
+//             }
+//       })
+//   }
+
+//   console.log("script is linked")
+//     $('form').on('submit', e => {
+//         const id = $(e.target).attr('data-id');
+//         console.log(id);
+//         editCharacter(id);
+//     });
+
+
   //  $('form').on('submit', e => {
   //   e.preventDefault();
   //   // const id = $(e.target).attr('data-id');

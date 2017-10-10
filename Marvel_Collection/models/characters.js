@@ -37,21 +37,22 @@ Characters.saveSearch = (character, user_id) => {
 
 Characters.getFavorites = (user_id) => {
 	return db.any(`SELECT * FROM characters WHERE user_id = $1`, user_id);
-}
+};
 
-// Characters.updateFavorite = (req, res, next) => {
-//   const {user_id, character_id} = res.locals.userCharacter;
-//   const {id} = req.params;
-//   db.oneOrNone(`UPDATE characters SET
-//     name = $1, decription = $2, thumbnail = $3
-//     WHERE id = $4 RETURNING *`,
-//     [name, discription, thumbnail, id])
-//     .then(userCharacter => {
-//       res.locals.userCharacter = userCharacter;
-//       next();
-//     })
-//     .catch(err => console.log(err));
-//    };
+
+Characters.updateFavorite = (req, res, next) => {
+  // const {user_id, character_id} = res.locals.userCharacter;
+  const {id} = req.params;
+  db.oneOrNone(`UPDATE characters SET
+    name = $1, decription = $2, thumbnail = $3
+    WHERE id = $4 RETURNING *`,
+    [name, discription, thumbnail, id])
+    .then(userCharacter => {
+      res.locals.userCharacter = userCharacter;
+      next();
+    })
+    .catch(err => console.log(err));
+   };
 
 Characters.deleteFavorite = (request, response, next) => {
   const {id} = request.params;
