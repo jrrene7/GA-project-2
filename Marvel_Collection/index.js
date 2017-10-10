@@ -11,6 +11,11 @@ const logger = require('morgan');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
+// var names = require('marvel-comics-characters');
+// var allNames = names.all;
+// var randomName = names.random();
+// var threeRandomNames = names.random(3);
+
 
 const charactersController = require('./controllers/characters');
 const booksController = require('./controllers/books');
