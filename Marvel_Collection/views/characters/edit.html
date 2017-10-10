@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EDIT</title>
+</head>
+<body>
+	
+ {{#characters}}
+  <div class="characters">
+      <form action="/characters/edit" method="POST">
+        <input type="submit" value="{{thumbnail.path}}.{{thumbnail.extension}}" name="thumbnail">
+        <input type="submit" value="{{id}}" name="id">
+        <input type="submit" value="{{name}}" name="name">
+        <input type="submit" value="{{description}}" name="description">
+
+
+    <div name="image"><img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt=""></div>
+    <div>{{id}}</div>
+    <div>{{name}}</div>
+    <div>{{description}}</div>
+ -</div>
+
+ -->  <button class="button-primary">EDIT</button>
+</form>
+  {{/characters}}
+
+</body>
+</html>

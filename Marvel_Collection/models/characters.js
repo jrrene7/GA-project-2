@@ -42,10 +42,10 @@ Characters.getFavorites = (user_id) => {
 // Characters.updateFavorite = (req, res, next) => {
 //   const {user_id, character_id} = res.locals.userCharacter;
 //   const {id} = req.params;
-//   db.oneOrNone(`UPDATE user_characters SET
-//     user_id = $1, character_id = $2
-//     WHERE id = $3 RETURNING *`,
-//     [user_id, character_id, id])
+//   db.oneOrNone(`UPDATE characters SET
+//     name = $1, decription = $2, thumbnail = $3
+//     WHERE id = $4 RETURNING *`,
+//     [name, discription, thumbnail, id])
 //     .then(userCharacter => {
 //       res.locals.userCharacter = userCharacter;
 //       next();

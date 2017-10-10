@@ -39,7 +39,12 @@ router.get('/home', (request, response) => {
      	})
 })
 
-// router.get('/:id')
+// router.put('/:id',
+//   Characters.updateFavorite,
+//   (request, response) => {
+//     const {userCharacter} = response.locals;
+//     response.json({userCharacter});
+//   });
 
 router.delete('/:id',
   Characters.deleteFavorite,

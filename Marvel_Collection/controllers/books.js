@@ -39,11 +39,11 @@ router.get('/home', (request, response) => {
      	})
 })
 
-// router.put('/home',
+// router.put('/:id',
 //   Books.updateFavorite,
-//   (req, res) => {
-//     const {userBook} = res.locals;
-//     res.json({userBook});
+//   (request, response) => {
+//     const {userBook} = response.locals;
+//     response.json({userBook});
 //   });
 
 router.delete('/:id',
