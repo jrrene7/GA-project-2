@@ -39,12 +39,14 @@ router.get('/home', (request, response) => {
      	})
 })
 
+// router.get('/:id')
 
-router.delete('/home',
+router.delete('/:id',
   Characters.deleteFavorite,
   (request, response) => {
     response.send('deleted');
   });
+
 
 
 module.exports = router;

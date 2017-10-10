@@ -4,7 +4,8 @@
 	 <script src="/js/jquery.js" charset="utf-8"></script>
    <script src="/js/books.js" charset="utf-8"></script>
    <script src="/js/characters.js" charset="utf-8"></script>
-
+<link rel='stylesheet' href='/css/home.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 	<meta charset="UTF-8">
 	<title>HOME</title>
 </head>
@@ -14,7 +15,7 @@
 	<div class="characters">
 		<a href="/characters/search">SEARCH FOR A CHARACTERS</a>
 		<br/ >
-		<a href="/characters/home">Go To Favorites</a>
+		<button class="button-primary"><a href="/characters/home">Favorite Characters</a></button>
 	</div>
 	<div id="characters-list">
 		{{#characters}}
@@ -25,9 +26,9 @@
 		{{description}}
 		<br/ >
 
-	<form action="/characters/home" method="POST">
-		<button type="submit" class="delete-character" data-id={{user_id}}>DELETE</button>
-	</form>
+	
+		<button id="delete-character" data-id={{id}} class="button-primary">DELETE</button>
+	
 
 		<br/ >
 		<br/ >
@@ -41,7 +42,7 @@
 <div class="books">
 	<a href="/books/search">SEARCH FOR A COMIC BOOKS</a>
 	<br/ >
-	<a href="/books/home">Go To Favorites</a>
+	<button class="button-primary"><a href="/books/home">Favorite Books</a></button>
 	</div>
 	<br />
 	<div id="books-list">
@@ -53,10 +54,9 @@
 		<br/ >
 		{{description}}
 		<br/ >
-<form action="/books/home" method="POST">
-<button type="submit" class="delete-book" data-id={{user_id}}>DELETE
+
+<button  id="delete-book" data-id={{id}} class="button-primary">DELETE
 </button>
-</form>
 		<br/ >
 		{{/books}}
 		

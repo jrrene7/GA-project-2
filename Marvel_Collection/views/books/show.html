@@ -4,25 +4,27 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+
   <title>COMIC BOOKS</title>
-<!--   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
- -->  <link rel='stylesheet' type='text/css' href='./public/css/style.css'>
+ <link rel='stylesheet' href='/css/showbooks.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <script src="./public/js/jquery.js"></script>
   <script src="./public/js/books.js"></script>
 </head>
 <body>
  
    {{#books}}
-  <div>
+  <div class="books">
 
      <form action="/books/home" method="POST">
         <input type="hidden" value="{{thumbnail.path}}.{{thumbnail.extension}}" name="thumbnail">
         <input type="hidden" value="{{id}}" name="id">
-        <input type="hidden" value="{{title}}" name="name">
+        <input type="hidden" value="{{title}}" name="title">
         <input type="hidden" value="{{description}}" name="description">
 <div>
 <img src="{{thumbnail.path}}.{{thumbnail.extension}}" alt="">
 </div>
+
     <div>{{title}}</div>
     <div>{{description}}</div>
     <div>{{prices}}</div>

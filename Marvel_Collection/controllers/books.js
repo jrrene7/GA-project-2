@@ -46,7 +46,7 @@ router.get('/home', (request, response) => {
 //     res.json({userBook});
 //   });
 
-router.delete('/home',
+router.delete('/:id',
   Books.deleteFavorite,
   (request, response) => {
     response.send('deleted');

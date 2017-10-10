@@ -1,0 +1,10 @@
+body {
+	background-image: url("../images/search-background.jpg");
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+}
+
+img {
+	width: 425px;
+	height: 425px;
+}

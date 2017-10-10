@@ -35,39 +35,39 @@ $(function(){
 
   // };
 
-// const deleteFavorite = (id) => {
-//         $.ajax({
-//             url: `/books/home/${id}`,
-//             type: 'DELETE',
-//             success: (data) => {
-//                 window.location.reload();
-//                 $(`#books-container[data-id]=${id}`).remove();
-//             },
-//             error: (err) => {
-//                 console.log(err);
-//             }
-//         })
-//     }
-//     $('.delete-book').on('click', e => {
-//         const id = $(e.target).attr('data-id');
-//         console.log(id);
-//         deleteFavorite(id);
-//     });
+const deleteBook = (id) => {
+        $.ajax({
+            url: `/books/${id}`,
+            type: 'DELETE',
+            success: (data) => {
+                window.location.reload();
+                $(`#books-list[data-id]=${id}`).remove();
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        })
+    }
+    $('#delete-book').on('click', e => {
+        const id = $(e.target).attr('data-id');
+        console.log(id);
+        deleteBook(id);
+    });
 
 
-    $('form').on('submit', e => {
-    e.preventDefault();
-    // const id = $(e.target).attr('data-id');
-    const formAction = $(this).attr('action');
-    $.ajax({
-      url: formAction,
-      method: 'DELETE',
-      success: data => {
-        location.href = '/home'
-      },
-      error: err => console.log(err)
-    })
-  })
+  //   $('form').on('submit', e => {
+  //   e.preventDefault();
+  //   // const id = $(e.target).attr('data-id');
+  //   const formAction = $(this).attr('action');
+  //   $.ajax({
+  //     url: formAction,
+  //     method: 'DELETE',
+  //     success: data => {
+  //       location.href = '/home'
+  //     },
+  //     error: err => console.log(err)
+  //   })
+  // })
 
 
 }); // ends doc.ready

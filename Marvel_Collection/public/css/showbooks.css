@@ -1,0 +1,16 @@
+body {
+	background-image: url("../images/search-background4.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+
+.books{
+width: 50vw;
+
+}
+
+img {
+	width: 425px;
+	height: 425px;
+}

@@ -1,0 +1,23 @@
+body {
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat; 
+	background-image: url("../images/login-background.jpg");
+}
+
+
+.login {
+display: inline-block;
+}
+
+form {
+/*	display: inline;
+*/}
+
+h1 {
+	color: white;
+}
+
+a {
+/*	text-decoration: underline wavy red;
+*/	color: white;
+}

@@ -1,0 +1,41 @@
+body {
+	background-size: 70vw 100vh;
+	background-repeat: no-repeat; 
+	background-position: center top;
+	padding-top: ;
+	background-image: url("../images/spiderman-vs-wolverine.jpg");
+
+}
+
+
+
+#characters-section {
+float: left;
+border: 
+width: 40vw;
+background-color: gray;
+opacity: .9;
+
+}
+
+#characters-list {
+	width: 40vw;
+}
+
+img {
+	width: 425px;
+	height: 425px;
+}
+
+
+#books-section {
+
+	float: right;
+	width: 40vw;
+	background-color: gray;
+	opacity: .9;
+}
+
+#books-list {
+	width: 40vw;
+}

@@ -31,42 +31,41 @@ $(function(){
   // 	let $description = $('<div class="description"></div>').text(`Description: ${description}`).appendTo($result);
   // 	let $thumbnail = $('<div class="thumbnail"></div>').url(`thumbnail: ${thumbnail}`).appendTo($result);
   // };
-// const deleteFavorite = (id) => {
-//         $.ajax({
-//             url: `/characters/home/${id}`,
-//             type: 'DELETE',
-//             success: (data) => {
-//                 window.location.reload();
-//                 $(`#characters-list[data-id]=${id}`).remove();
-//             },
-//             error: (err) => {
-//                 console.log(err);
-//             }
-//         })
-//     }
-//     $('.delete-character').on('click', e => {
-//         const id = $(e.target).attr('data-id');
-//         console.log(id);
-//         deleteFavorite(id);
-//     });
+const deleteCharacter = (id) => {
+        $.ajax({
+            url: `/characters/${id}`,
+            type: 'DELETE',
+            success: (data) => {
+                window.location.reload();
+                $(`#characters-list[data-id]=${id}`).remove();
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        })
+    }
+    console.log("script is linked")
+    $('#delete-character').on('click', e => {
+        const id = $(e.target).attr('data-id');
+        console.log(id);
+        deleteCharacter(id);
+    });
 
 
 
-
-
-   $('form').on('submit', e => {
-    e.preventDefault();
-    // const id = $(e.target).attr('data-id');
-    const formAction = $(this).attr('action');
-    $.ajax({
-      url: formAction,
-      method: 'DELETE',
-      success: data => {
-        location.href = '/home'
-      },
-      error: err => console.log(err)
-    })
-  })
+  //  $('form').on('submit', e => {
+  //   e.preventDefault();
+  //   // const id = $(e.target).attr('data-id');
+  //   const formAction = $(this).attr('action');
+  //   $.ajax({
+  //     url: formAction,
+  //     method: 'DELETE',
+  //     success: data => {
+  //       location.href = '/home'
+  //     },
+  //     error: err => console.log(err)
+  //   })
+  // })
 
 
 }); // ends doc.ready

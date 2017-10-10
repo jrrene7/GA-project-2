@@ -5,15 +5,17 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <meta http-equiv='X-UA-Compatible' content='ie=edge' />
   <title>Character</title>
-<!--   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
- -->  <link rel='stylesheet' type='text/css' href='./public/css/style.css'>
+
+  <link rel='stylesheet' href='/css/showcharacters.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+
   <script src="./public/js/jquery.js"></script>
   <script src="./public/js/books.js"></script>
 </head>
 <body>
 
     {{#characters}}
-  <div>
+  <div class="characters">
       <form action="/characters/home" method="POST">
         <input type="hidden" value="{{thumbnail.path}}.{{thumbnail.extension}}" name="thumbnail">
         <input type="hidden" value="{{id}}" name="id">
@@ -26,16 +28,17 @@
     <div>{{name}}</div>
     <div>{{description}}</div>
  -</div>
-  {{/characters}}
 
 <!--         <input placeholder="Enter Name" name="input" type="text">
  --><!--        <input type="submit" value="Search">
- -->  <button>Favorite</button>
+ -->  <button class="button-primary">Favorite</button>
 </form>
+  {{/characters}}
+
 <button><a href="/characters/Search">Back</a></button>
 
   <!-- logout to index.html (landing page) -->
-  <a href="/" class="logout">Logout</a> 
+  <button class="button-primary"><a href="/" class="logout">Logout</a></button> 
 <!--   <header>
     <h1>Search for Characters</h1>
   </header>

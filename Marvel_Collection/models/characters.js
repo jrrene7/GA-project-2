@@ -54,8 +54,8 @@ Characters.getFavorites = (user_id) => {
 //    };
 
 Characters.deleteFavorite = (request, response, next) => {
-  const {user_id} = request.params;
-  db.none(`DELETE FROM characters WHERE user_id = $1`, user_id)
+  const {id} = request.params;
+  db.none(`DELETE FROM characters WHERE id = $1`, id)
   .then(()=> next())
   .catch(err => console.log(err));
 }
